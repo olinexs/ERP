@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Tiketin aja</title>
+        <script src="script.js"></script>
+    </head> 
+    <body>
+    <div class="masuk" style="flex-direction:column; position:relative; min-height: 30px;">
+        <div class="form">
+        <center>
+            <div class="hform" style="text-align: center; box-sizing:inherit">
+                <h2>Sign In</h2>
+            </div>
+            <div class="formbody">
+                <form class="sbarx" id="loginForm">
+                        <input id="username" class="sbar1" role="combobox" type="text" placeholder="Username" autocomplete="off" name="username">
+                        <input id="password" class="sbar2" role="combobox" type="password" placeholder="Password" autocomplete="off" name="password"> 
+                        <div class="button">
+                            <button class="click" type="submit" onclick="login(event)">
+                                <span>Login</span>
+                            </button>
+                        </div>
+                        <div id="warning" style="color: red;"></div> 
+                </form>
+            </div>
+        </center>
+        </div>
+    </div>  
+    <div class="bottom" style="font-size: smaller; text-align:center">Made by 
+        <strong>Caroline Panggabean</strong>
+    <br>
+    </div>
+    </body>
+    <style>
+        
+        body {
+            background-image: url("Downloads/pexels-pixabay-258160.jpg");
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .form {
+            height: auto;
+            overflow-y: auto;
+            padding: 40px 60px auto;
+            display:block; align-content:center; box-sizing:inherit;
+        }
+        .hform {
+            box-sizing: inherit;
+            padding-bottom: 0;
+            padding-top: 16px;
+            color: #ffffff;
+            font-size: 24px;
+            font-family: 'Robotoblack';
+            font-weight: 400;
+            line-height: 1.3333;
+            margin-bottom: 0;
+            margin-top: 30px;
+            word-break: break-word;
+        }
+        .formbody {
+            box-sizing: inherit;
+            margin: auto;
+        }
+
+        .sbarx {
+            position: relative;
+            display: block;
+            margin-top: 120px;
+            margin-left: 20px;
+            padding: 0 16px;
+        }
+        .sbar1 {
+            display: flex;
+            min-height: 44px;
+            background: white;   
+            border: 1px solid white;
+            border-radius: 24px;
+            box-shadow: 10px 10px 8px #091d26;
+            margin-top: auto;  
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            width: 600px;
+            max-width: 530px;
+            padding: 5px;
+            font-size: 18px;
+            padding-inline-start: 20px;
+        }
+
+        .sbar1::-webkit-input-placeholder{
+            color: #102937;
+        }
+        
+        .sbar2 {
+            display: flex;
+            min-height: 44px;
+            background: white;
+            border: 1px solid white;
+            border-radius: 24px;
+            box-shadow: 10px 10px 8px #091d26;
+            margin-top: 40px;  
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            width: 600px;
+            max-width: 530px;
+            padding: 5px;
+            font-size: 18px;
+            padding-inline-start: 20px;
+        }
+
+        .sbar2::-webkit-input-placeholder{
+            color: #102937;
+        }
+        
+        .tombol {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .click {
+            position: relative;
+            text-align: center;
+            box-shadow: 2px 2px 1px rgb(253, 152, 11);
+            border: rgb(247, 171, 64);
+            border-radius: 14px;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px;
+            font-size: 18px;
+            background-color: rgb(247, 171, 64);
+            margin-top: 40px;
+            width: 110px;
+            font-family:'Segoe UI';
+            font-weight: bold;
+            text-shadow: 2px rgb(159, 102, 21);
+            transition: all 0.5s;
+            cursor: pointer;
+         }
+
+         .click span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          .click span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          
+          .click:hover span {
+            padding-right: 20px;
+          }
+
+          .click:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+
+        @media (min-width: 601px) {
+            .masuk {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                position: relative;
+            }
+            .masuk::before, .masuk::after {
+                box-sizing: border-box;
+                flex-grow: 1;
+                content: "";
+                display: block;
+                height: 24px;
+            }
+            .masuk::before {
+                min-height: 80px;
+            }
+            .masuk::after {
+                min-height: 64px;
+            }
+            .click {
+                min-height: auto;
+            }
+        }
+        
+        @font-face {
+            font-family: Robotoblack;
+            src: url(Downloads/Roboto/Roboto-Light.ttf);
+        }
+    </style>
+</html>

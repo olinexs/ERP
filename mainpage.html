@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello!</title>
+    </head>
+    <body>
+        <header class="headermain" style="">
+
+            <div class="main1" data-analytics-event="{"action": "click item to scroll to AboutMe", "label"="ref_cta:AboutMe;"}" href="#AboutMe">
+                <nav>
+                    <!-- Your navigation links go here -->
+                    <ul>
+                      <li><a href="#">About Me</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </nav>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <div class="main">
+            <div class="body">
+                <div class="AboutMe">
+                    Testing part
+                </div>
+                <div class="task">
+                    <div id="checkbox-container">
+                        <input type="checkbox" id="checkbox-1"><input type="text" id="text-1">
+                        <br>
+                    </div>
+                      
+                      <button onclick="addCheckbox()">Add Task</button>
+                      
+                      <script>
+                        let checkboxCount = 1;
+                      
+                        function addCheckbox() {
+                          checkboxCount++;
+                      
+                          const container = document.getElementById("checkbox-container");
+                      
+                          const checkbox = document.createElement("input");
+                          checkbox.type = "checkbox";
+                          checkbox.id = "checkbox-" + checkboxCount;
+                      
+                          const text = document.createElement("input");
+                          text.type = "text";
+                          text.className = "checkbox-text";
+                          text.id = "text-" + checkboxCount;
+                          text.addEventListener("input", function() {
+                            text.classList.remove("bordered");
+                          });
+                      
+                          container.appendChild(checkbox);
+                          container.appendChild(text);
+                      
+                          const lineBreak = document.createElement("br");
+                          container.appendChild(lineBreak);
+                        }
+                      </script>
+                      
+                      <style>
+                        .checkbox-text {
+                          display: inline-block;
+                          vertical-align: middle;
+                          margin-left: 10px;
+                          border: 1px solid;
+                          transition: border-color 0.3s;
+                        }
+                      
+                        .checkbox-text.bordered {
+                          border-color: transparent;
+                        }
+                      </style>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        
+        .main::before {
+            background-color: #091d26;
+        } 
+
+        .main1::before {
+            background-color: #3C0753;
+        }
+        
+        .main1 {
+            position: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333; 
+            color: #F05941; 
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .main1 nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+          }
+
+        .main1 nav li {
+            margin-right: 20px;
+          }
+        
+        .main1 nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        @media (min-width: 601px) {
+            .main {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                position: relative;
+            }
+            .main::before, .main::after {
+                box-sizing: border-box;
+                flex-grow: 1;
+                content: "";
+                display: block;
+                height: 24px;
+            }   
+            .main::before {
+                min-height: 30px;
+                max-height: 40px;
+            }
+            .main::after {
+                min-height: 64px;
+            }
+
+        }
+
+        @media (min-width: 523px) {
+            .main1 {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                position: relative;
+            }
+            .main1::before, .main::after {
+                box-sizing: border-box;
+                flex-grow: 1;
+                content: "";
+                display: block;
+                height: 24px;
+            }   
+            .main1::before {
+                min-height: 30px;
+                max-height: 40px;
+            }
+            .main1::after {
+                min-height: 64px;
+            }
+        }
+    </style>
+</html>
